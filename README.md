@@ -1,4 +1,6 @@
 # bibliobooks
+Applicazione per tutti gli amanti della lettura, indecisi o insicuri su che libro comprare. Permette di scrollare un catalogo di libri e, scegliendo il piano mensile, ricevere a casa un numero di libri segreti, da restituire alla fine del mese. Per evitare di ricevere un libro già letto è permesso creare una lista di lettura inserendo libri già letti e scrivere delle brevi recensioni.
+
 
 la mia applicazione 
 1. un utente per registrarsi inserisce i suoi dati personali
