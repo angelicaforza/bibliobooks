@@ -120,5 +120,6 @@ caratteristiche generali del dominio applicativo
 - Se il servizio prevede la raccolta di dati per profilare gli utenti o personalizzare le raccomandazioni, tale trattamento deve rispettare la normativa sulla protezione dei dati personali e gli eventuali obblighi informativi applicabili.
 - Se vengono utilizzati cookie o tecnologie di tracciamento, il sistema deve rispettare la normativa applicabile in materia di cookie e strumenti di tracciamento, nel rispetto dell'art. 122 del D.Lgs. 196/2003
 
+User story 
 
 
