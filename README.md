@@ -48,4 +48,87 @@ vision:
 altre funzionalità possibili 
 - classifica dei lettori
 - brevi video introduttivi per i libri
-- 
+
+Requisiti funzionali --> descrivono i servizi, o funzioni, offerti dal
+sistema (normalmente attivati da user-input)
+Gestione dell'utente
+Il sistema deve permettere a un utente di registrarsi inserendo i propri dati personali.
+Il sistema deve permettere a un utente registrato di effettuare il login.
+Il sistema deve permettere all'utente di modificare i propri dati personali.
+Il sistema deve permettere all'utente di inserire e modificare i propri generi preferiti.
+Il sistema deve permettere all'utente di inserire e modificare i propri autori preferiti.
+
+Catalogo dei libri
+Il sistema deve permettere a un utente, anche non autenticato, di visualizzare il catalogo dei libri disponibili.
+Il sistema deve permettere all'utente di visualizzare le informazioni di un libro.
+Il sistema deve mostrare, per ogni libro, titolo, autore, genere e trama.
+Il sistema deve permettere a un utente loggato di selezionare un libro come già letto.
+Il sistema deve creare e aggiornare la lista dei libri già letti dell'utente.
+
+Recensioni
+Il sistema deve permettere a un utente loggato di lasciare una recensione su un libro già letto.
+Il sistema deve permettere all'utente di visualizzare le proprie recensioni.
+Il sistema deve associare ogni recensione al relativo utente e libro.
+
+Abbonamento
+Il sistema deve permettere all'utente di visualizzare i piani disponibili.
+Il sistema deve permettere all'utente di selezionare un piano di abbonamento.
+Il sistema deve permettere all'utente di modificare il proprio piano.
+Il sistema deve permettere all'utente di visualizzare il proprio piano attivo.
+
+Gestione dei libri da parte dell'admin
+Il sistema deve permettere all'amministratore di inserire nuovi libri.
+Il sistema deve permettere all'amministratore di modificare i dati di un libro.
+Il sistema deve permettere all'amministratore di eliminare un libro.
+Il sistema deve permettere all'amministratore di segnalare un libro come danneggiato.
+Il sistema deve permettere all'amministratore di segnalare un libro come perso/non restituito.
+Il sistema deve permettere all'amministratore di calcolare e registrare la data di scadenza della restituzione.
+
+Spedizione e restituzione
+Il sistema deve permettere di gestire l'invio mensile dei libri agli utenti.
+Il sistema deve permettere all'amministratore di registrare la restituzione dei libri.
+Il sistema deve permettere al sistema di calcolare eventuali multe.
+Il sistema deve permettere all'utente di visualizzare le multe a proprio carico.
+
+Requisiti non funzionali -->  descrivono vincoli sui servizi offerti dal
+sistema, e sullo stesso processo di sviluppo
+Sicurezza
+Le password degli utenti devono essere memorizzate in forma crittograficamente sicura.
+Il sistema deve impedire agli utenti non autorizzati di accedere ai dati personali degli altri utenti.
+Le funzionalità di amministrazione devono essere accessibili soltanto agli utenti con ruolo amministratore.
+
+Prestazioni
+Il login deve essere completato in meno di 1 secondo in condizioni normali.
+Il catalogo dei libri deve essere visualizzato entro un tempo massimo definito, ad esempio 2 secondi.
+
+Usabilità
+Il sistema deve essere utilizzabile sia da computer sia da dispositivi mobili.
+L'interfaccia deve permettere all'utente di navigare facilmente tra catalogo, libri letti, preferenze e abbonamento.
+
+Disponibilità/affidabilità
+Il sistema deve garantire la disponibilità del servizio per la maggior parte del tempo.
+I dati relativi a utenti, abbonamenti, libri e recensioni devono essere salvati senza perdita di informazioni.
+
+
+Requisiti di dominio --> (funzionali e non-funzionali) riflettono
+caratteristiche generali del dominio applicativo
+Regole dell'abbonamento
+Un utente può ricevere un numero di libri al mese determinato dal piano scelto.
+Un utente deve avere un piano attivo per poter ricevere i libri.
+Il numero di libri ricevibili mensilmente deve rispettare i limiti previsti dal piano.
+I libri vengono inviati all'utente con una frequenza mensile.
+
+Regole del prestito
+Ogni libro ricevuto dall'utente deve avere una data di restituzione.
+L'utente deve restituire i libri entro la data di scadenza prevista.
+Al termine del periodo di prestito, l'utente può restituire il libro oppure acquistarlo.
+Se l'utente decide di acquistare il libro, deve pagare il prezzo pieno previsto.
+
+Regole sulle multe
+Se un libro viene restituito danneggiato, all'utente deve essere applicata una multa proporzionata al tipo di danno.
+Se un libro non viene restituito entro la scadenza, deve essere applicata una multa per il ritardo.
+La multa per il ritardo può aumentare in funzione del tempo trascorso dalla scadenza.
+In caso di perdita del libro, all'utente deve essere applicato l'importo previsto per la perdita del libro.
+
+
+
