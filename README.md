@@ -122,4 +122,8 @@ caratteristiche generali del dominio applicativo
 
 User story 
 
-
+SWOT 
+- S : Nessuno sul mercato propone un servizio identico, conveniente, innovativo, più funzionalità in un'applicazione 
+- W : non è molto sviluppata e non prevede molti svaghi al suo interno 
+- O : potrei inserire l'ai all'interno, proporre dei giochetti, fare scegliere i libri all'utente se preferisce 
+- T : Le biblioteche offrono il prestito di libri gratis, le persone potrebbero non restituirli o danneggiati
