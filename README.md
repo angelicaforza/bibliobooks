@@ -121,63 +121,63 @@ caratteristiche generali del dominio applicativo
 - Se vengono utilizzati cookie o tecnologie di tracciamento, il sistema deve rispettare la normativa applicabile in materia di cookie e strumenti di tracciamento, nel rispetto dell'art. 122 del D.Lgs. 196/2003
 
 User story 
-**1. Registrazione utente**
+1. Registrazione utente
 Come utente non registrato, voglio poter inserire i miei dati personali per registrarmi, così da poter accedere a tutte le funzionalità dell'applicazione.
-**2. Login utente**
+2. Login utente
 Come utente registrato, voglio poter effettuare il login, così da poter accedere al mio account e alle mie funzionalità personalizzate.
-**3. Visualizzazione catalogo**
+3. Visualizzazione catalogo
 Come utente, anche non autenticato, voglio poter scorrere il catalogo dei libri disponibili, così da poter vedere quali libri sono presenti nell'applicazione.
-**4. Visualizzazione dettagli libro**
+4. Visualizzazione dettagli libro
 Come utente, voglio poter visualizzare le informazioni di un libro, così da poter conoscere titolo, autore, genere e trama prima di decidere se leggerlo.
-**5. Segnalazione libro già letto**
+5. Segnalazione libro già letto
 Come utente loggato, voglio poter selezionare un libro come già letto, così da poterlo aggiungere alla mia lista dei libri letti ed evitare di riceverlo nuovamente.
-**6. Creazione lista libri letti**
+6. Creazione lista libri letti
 Come utente loggato, voglio avere una lista dei libri che ho già letto, così da poterla consultare e aggiornare in qualsiasi momento.
-**7. Recensione di un libro letto**
+7. Recensione di un libro letto
 Come utente loggato, voglio poter lasciare una breve recensione su un libro già letto, così da poter contribuire all'algoritmo dell'app e condividere la mia opinione.
-**8. Visualizzazione delle proprie recensioni**
+8. Visualizzazione delle proprie recensioni
 Come utente loggato, voglio poter visualizzare le recensioni che ho lasciato, così da poterle consultare e, se necessario, modificarle.
-**9. Inserimento generi preferiti**
+9. Inserimento generi preferiti
 Come utente loggato, voglio poter inserire e modificare i miei generi preferiti, così da ricevere libri più adatti ai miei gusti.
-**10. Inserimento autori preferiti**
+10. Inserimento autori preferiti
 Come utente loggato, voglio poter inserire e modificare i miei autori preferiti, così da ricevere suggerimenti e libri più in linea con le mie preferenze.
-**11. Scelta del piano di abbonamento**
+11. Scelta del piano di abbonamento
 Come utente loggato, voglio poter scegliere il piano di abbonamento che più mi rispecchia, così da ricevere a casa il numero di libri desiderato ogni mese.
-**12. Visualizzazione dei piani disponibili**
+12. Visualizzazione dei piani disponibili
 Come utente loggato, voglio poter visualizzare i piani disponibili, così da poter confrontare le opzioni e scegliere quello più adatto a me.
-**13. Modifica del piano di abbonamento**
+13. Modifica del piano di abbonamento
 Come utente loggato, voglio poter modificare il mio piano di abbonamento, così da poter adattare il servizio alle mie esigenze nel tempo.
-**14. Visualizzazione del piano attivo**
+14. Visualizzazione del piano attivo
 Come utente loggato, voglio poter visualizzare il mio piano attivo, così da sapere sempre quali sono le condizioni del mio abbonamento.
-**15. Ricezione dei libri a sorpresa**
+15. Ricezione dei libri a sorpresa
 Come utente abbonato, voglio ricevere a casa i libri a "sorpresa" ogni mese, così da scoprire nuove letture scelte in base alle mie preferenze.
-**16. Restituzione dei libri**
+16. Restituzione dei libri
 Come utente abbonato, voglio poter restituire i libri alla fine del mese, così da poter ricevere nuovi libri il mese successivo.
-**17. Acquisto dei libri ricevuti**
+17. Acquisto dei libri ricevuti
 Come utente abbonato, voglio poter pagare il prezzo pieno di un libro ricevuto e tenerlo, così da poterlo aggiungere alla mia collezione personale.
-**18. Visualizzazione delle multe**
+18. Visualizzazione delle multe
 Come utente, voglio poter visualizzare le multe a mio carico, così da essere informato di eventuali costi aggiuntivi.
-**19. Modifica dei propri dati personali**
+19. Modifica dei propri dati personali
 Come utente loggato, voglio poter modificare i miei dati personali, così da mantenere sempre aggiornate le mie informazioni.
-**20. Inserimento di un nuovo libro (admin)**
+20. Inserimento di un nuovo libro (admin)
 Come amministratore, voglio poter inserire nuovi libri nel catalogo, così da ampliare l'offerta disponibile agli utenti.
-**21. Modifica dei dati di un libro (admin)**
+21. Modifica dei dati di un libro (admin)
 Come amministratore, voglio poter modificare i dati di un libro, così da mantenere corrette e aggiornate le informazioni del catalogo.
-**22. Eliminazione di un libro (admin)**
+22. Eliminazione di un libro (admin)
 Come amministratore, voglio poter eliminare un libro dal catalogo, così da rimuovere titoli non più disponibili o non più adatti.
-**23. Segnalazione di un libro danneggiato (admin)**
+23. Segnalazione di un libro danneggiato (admin)
 Come amministratore, voglio poter segnalare un libro come danneggiato, così da poter applicare la multa prevista in base al tipo di danno.
-**24. Segnalazione di un libro perso/non restituito(admin)**
+24. Segnalazione di un libro perso/non restituito(admin
 Come amministratore, voglio poter segnalare un libro come perso o non restituito, così da poter applicare le multe previste.
-**25. Calcolo della data di scadenza (admin)**
+25. Calcolo della data di scadenza (admin
 Come amministratore, voglio poter calcolare e registrare la data di scadenza della restituzione dei libri, così da poter gestire correttamente i tempi di restituzione.
-**26. Gestione dell'invio mensile dei libri**
+26. Gestione dell'invio mensile dei libri
 Come amministratore, voglio poter gestire l'invio mensile dei libri agli utenti, così da garantire la consegna dei libri a tutti gli abbonati.
-**27. Registrazione della restituzione (admin)**
+27. Registrazione della restituzione (admin)
 Come amministratore, voglio poter registrare la restituzione dei libri, così da tenere traccia di quali libri sono stati restituiti e in che condizioni.
-**28. Calcolo delle multe**
+28. Calcolo delle multe
 Come sistema, voglio calcolare automaticamente eventuali multe per danni, perdite o mancate restituzioni, così da applicare i costi previsti in modo corretto e trasparente.
-**29. Gestione delle preferenze**
+29. Gestione delle preferenze
 Come utente loggato, voglio poter gestire le mie preferenze di generi e autori, così da migliorare la selezione dei libri che ricevo.
 
 
@@ -188,4 +188,6 @@ SWOT analisys:
 - T : Le biblioteche offrono il prestito di libri gratis, le persone potrebbero non restituirli o danneggiati
 
 
+
+[Analisi_SWOT.pptx.pdf](https://github.com/user-attachments/files/33053974/Analisi_SWOT.pptx.pdf)
 
