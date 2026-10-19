@@ -191,25 +191,16 @@ SWOT analisys:
 
 [Analisi_SWOT.pptx.pdf](https://github.com/user-attachments/files/33053974/Analisi_SWOT.pptx.pdf)
 
-UML CASES 
-- GESTIONE UTENTE
-![gestione utente](https://yuml.me/diagram/scruffy/usecase/%5BUtente%20non%20registrato%5D-%28Registrarsi%29,%5BUtente%5D-%28Effettuare%20login%29,%5BUtente%5D-%28Modificare%20dati%20personali%29,%5BUtente%5D-%28Gestire%20preferenze%29,%28Gestire%20preferenze%29%3E%28Inserire%20generi%20preferiti%29,%28Gestire%20preferenze%29%3E%28Inserire%20autori%20preferiti%29)
+UML CASES:
 
-- Catalogo e libri letti
-![catalogo e libri letti](https://yuml.me/diagram/scruffy/usecase/%5BUtente%20non%20loggato%5D-%28Visualizzare%20catalogo%29,%5BUtente%20loggato%5D-%28Visualizzare%20catalogo%29,%5BUtente%20loggato%5D-%28Segnare%20libro%20come%20letto%29,%5BUtente%20loggato%5D-%28Consultare%20lista%20libri%20letti%29,%28Visualizzare%20catalogo%29%3E%28Visualizzare%20dettagli%20libro%29,%28Segnare%20libro%20come%20letto%29%3E%28Aggiornare%20lista%20libri%20letti%29)
+- Utente, catalogo e recensioni
 
-- Recensioni
-<img src="https://yuml.me/diagram/scruffy/usecase/%5BUtente%20loggato%5D-%28Lasciare%20recensione%29,%5BUtente%20loggato%5D-%28Visualizzare%20le%20proprie%20recensioni%29,%5BUtente%20loggato%5D-%28Modificare%20recensione%29,%28Lasciare%20recensione%29%3E%28Verificare%20libro%20gia%20letto%29,%28Lasciare%20recensione%29%3E%28Associare%20recensione%20a%20utente%20e%20libro%29">
-  
-- Abbonamento
-![abbonamento](https://yuml.me/diagram/scruffy/usecase/%5BUtente%20loggato%5D-%28Visualizzare%20piani%20disponibili%29,%5BUtente%20loggato%5D-%28Scegliere%20piano%29,%5BUtente%20loggato%5D-%28Modificare%20piano%29,%5BUtente%20loggato%5D-%28Visualizzare%20piano%20attivo%29,%28Scegliere%20piano%29%3E%28Visualizzare%20piani%20disponibili%29,%28Modificare%20piano%29%3E%28Visualizzare%20piano%20attivo%29)
+![utente catalogo recensioni](https://yuml.me/diagram/scruffy/usecase/%5BVisitatore%5D-%28Registrarsi%29,%5BVisitatore%5D-%28Effettuare%20login%29,%5BVisitatore%5D-%28Visualizzare%20catalogo%29,%5BUtente%5D-%28Visualizzare%20catalogo%29,%5BUtente%5D-%28Modificare%20dati%20personali%29,%5BUtente%5D-%28Gestire%20preferenze%29,%5BUtente%5D-%28Segnare%20libro%20come%20letto%29,%5BUtente%5D-%28Consultare%20lista%20libri%20letti%29,%5BUtente%5D-%28Lasciare%20recensione%29,%5BUtente%5D-%28Visualizzare%20proprie%20recensioni%29,%5BUtente%5D-%28Modificare%20recensione%29,%5BAdmin%5D-%28Inserire%20libro%29,%5BAdmin%5D-%28Modificare%20libro%29,%5BAdmin%5D-%28Eliminare%20libro%29,%28Visualizzare%20catalogo%29%3E%28Visualizzare%20dettagli%20libro%29,%28Gestire%20preferenze%29%3E%28Inserire%20generi%20preferiti%29,%28Gestire%20preferenze%29%3E%28Inserire%20autori%20preferiti%29.png)
 
-- Spedizione e restituzione
-![spedizione e restituzione](https://yuml.me/diagram/scruffy/usecase/%5BUtente%20abbonato%5D-%28Ricevere%20libri%20a%20sorpresa%29,%5BUtente%20abbonato%5D-%28Restituire%20libri%29,%5BUtente%20abbonato%5D-%28Acquistare%20libro%20ricevuto%29,%5BAdmin%5D-%28Gestire%20invio%20mensile%29,%5BAdmin%5D-%28Registrare%20restituzione%29,%5BAdmin%5D-%28Calcolare%20data%20di%20scadenza%29,%28Gestire%20invio%20mensile%29%3E%28Calcolare%20data%20di%20scadenza%29,%28Restituire%20libri%29%3E%28Registrare%20restituzione%29)
+- Abbonamento, spedizione e multe
 
-- Gestione libri (admin)
-![gestione libri](https://yuml.me/diagram/scruffy/usecase/%5BAdmin%5D-%28Effettuare%20login%29,%5BAdmin%5D-%28Inserire%20libro%29,%5BAdmin%5D-%28Modificare%20libro%29,%5BAdmin%5D-%28Eliminare%20libro%29,%28Inserire%20libro%29%3E%28Effettuare%20login%29,%28Modificare%20libro%29%3E%28Effettuare%20login%29,%28Eliminare%20libro%29%3E%28Effettuare%20login%29)
-  
-- Multe
-![multe](https://yuml.me/diagram/scruffy/usecase/%5BAdmin%5D-%28Registrare%20restituzione%29,%5BAdmin%5D-%28Segnalare%20libro%20danneggiato%29,%5BAdmin%5D-%28Segnalare%20libro%20perso%29,%5BSistema%5D-%28Rilevare%20ritardo%20restituzione%29,%5BSistema%5D-%28Calcolare%20multa%29,%5BUtente%20abbonato%5D-%28Visualizzare%20multe%29,%5BUtente%20abbonato%5D-%28Pagare%20multa%29,%28Registrare%20restituzione%29%3C%28Segnalare%20libro%20danneggiato%29,%28Segnalare%20libro%20danneggiato%29%3E%28Calcolare%20multa%29,%28Segnalare%20libro%20perso%29%3E%28Calcolare%20multa%29,%28Rilevare%20ritardo%20restituzione%29%3E%28Calcolare%20multa%29.png)
+![abbonamento spedizione multe](https://yuml.me/diagram/scruffy/usecase/%5BUtente%5D-%28Scegliere%20piano%29,%5BUtente%5D-%28Modificare%20piano%29,%5BUtente%5D%5E%5BUtente%20abbonato%5D,%5BUtente%20abbonato%5D-%28Ricevere%20libri%20a%20sorpresa%29,%5BUtente%20abbonato%5D-%28Restituire%20libri%29,%5BUtente%20abbonato%5D-%28Acquistare%20libro%20ricevuto%29,%5BUtente%20abbonato%5D-%28Visualizzare%20multe%29,%5BUtente%20abbonato%5D-%28Pagare%20multa%29,%5BAdmin%5D-%28Gestire%20invio%20mensile%29,%5BAdmin%5D-%28Calcolare%20data%20di%20scadenza%29,%5BAdmin%5D-%28Registrare%20restituzione%29,%5BAdmin%5D-%28Segnalare%20libro%20danneggiato%29,%5BAdmin%5D-%28Segnalare%20libro%20perso%29,%5BSistema%5D-%28Rilevare%20ritardo%20restituzione%29,%5BSistema%5D-%28Calcolare%20multa%29,%28Scegliere%20piano%29%3E%28Visualizzare%20piani%20disponibili%29,%28Modificare%20piano%29%3E%28Visualizzare%20piano%20attivo%29,%28Ricevere%20libri%20a%20sorpresa%29%3E%28Gestire%20invio%20mensile%29,%28Gestire%20invio%20mensile%29%3E%28Calcolare%20data%20di%20scadenza%29,%28Restituire%20libri%29%3E%28Registrare%20restituzione%29,%28Restituire%20libri%29%3C%28Acquistare%20libro%20ricevuto%29,%28Registrare%20restituzione%29%3C%28Segnalare%20libro%20danneggiato%29,%28Segnalare%20libro%20danneggiato%29%3E%28Calcolare%20multa%29,%28Segnalare%20libro%20perso%29%3E%28Calcolare%20multa%29,%28Rilevare%20ritardo%20restituzione%29%3E%28Calcolare%20multa%29.png)
+
+
+
 
