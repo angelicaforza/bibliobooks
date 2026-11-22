@@ -1,5 +1,5 @@
 # bibliobooks
-Applicazione per tutti gli amanti della lettura, indecisi o insicuri su che libro comprare. Permette di scrollare un catalogo di libri e, scegliendo il piano mensile, ricevere a casa un numero di libri segreti, da restituire alla fine del mese. Per evitare di ricevere un libro già letto è permesso creare una lista di lettura inserendo libri già letti e scrivere delle brevi recensioni.
+Applicazione per tutti gli amanti della lettura, indecisi o insicuri su che libro comprare. Permette di scrollare un catalogo di libri e, scegliendo il piano mensile (prevede un numero di libri e in base a quello il costo), ricevere a casa un numero di libri segreti, da restituire alla fine del mese.
 
 
 La mia applicazione in breve 
@@ -15,6 +15,8 @@ La mia applicazione in breve
 10. se i libri vengono restituiti danneggiati arriverà una multa da pagare in base al tipo di danno
 11. se i libri non vengono restituiti in tempo arriveranno delle multe da pagare ogni tot di tempo
 12. un utente non loggato può scrollare il catalogo di libri
+13. a ogni ordine l'utente paga una cauzione, che gli viene restituita dopo il rientro dei libri e i controlli sul loro stato
+14. se il pagamento dell'abbonamento non va a buon fine, il servizio viene sospeso fino al pagamento successivo
 
 Funzionalità
 - loggare utente
@@ -25,6 +27,9 @@ Funzionalità
 - scelta del piano di ricezione di libri (utente loggato)
 - calcolo della scadenza del libro (admin)
 - multe in caso di perdita o danneggiamento (segnala come perso, come danneggiato)(admin)
+- calcolo automatico delle multe (algoritmo)
+- pagamento e restituzione della cauzione
+- sospensione del servizio in caso di pagamento fallito
 
 Criteri: (importanza)
 - loggare utente
@@ -39,7 +44,7 @@ Criteri: (importanza)
 Vision: 
 - il giorno del compleanno viene regalato un libro 
 - Ogni anno che rimani abbonato viene fatto il regalo fedeltà 
-- viene inserito qualcosa collaborato con gli autori 
+- viene inserito qualcosa collaborato con gli autori
 - sconti nelle librerie convenzionate
 - disponibilità di libri digitali  
 - classifica dei lettori
@@ -86,6 +91,24 @@ Spedizione e restituzione
 - Il sistema deve permettere all'amministratore di registrare la restituzione dei libri.
 - Il sistema deve permettere al sistema di calcolare eventuali multe.
 - Il sistema deve permettere all'utente di visualizzare le multe a proprio carico.
+
+Multe
+- Il sistema deve calcolare automaticamente le multe per ritardo, danneggiamento e perdita.
+- Il sistema deve calcolare la multa di ritardo a intervalli di tempo regolari (frequenza configurabile) a partire dalla data di scadenza.
+- Il sistema deve calcolare l'importo delle multe in base al libro coinvolto (ad esempio il suo prezzo) e al tipo di danno segnalato dall'amministratore.
+- Il sistema deve considerare perso un libro non restituito dopo 30 giorni dalla data di scadenza e applicare la multa prevista per la perdita.
+- Il sistema deve notificare all'utente la multa applicata, con motivazione e importo.
+- Il sistema deve permettere all'utente di pagare le multe a proprio carico.
+
+Cauzione
+- Il sistema deve richiedere il pagamento di una cauzione a ogni ordine.
+- Il sistema deve restituire la cauzione all'utente dopo la restituzione dei libri e il completamento dei controlli sul loro stato.
+- Il sistema deve poter trattenere dalla cauzione l'importo delle multe dovute, restituendo solo l'eventuale differenza.
+- Il sistema deve comunicare chiaramente all'utente importo, condizioni e tempi di restituzione della cauzione.
+
+Pagamenti e sospensione del servizio
+- Il sistema deve sospendere il servizio se il pagamento dell'abbonamento non va a buon fine, fino al successivo pagamento riuscito.
+- Il sistema deve informare l'utente del pagamento fallito e dello stato di sospensione.
 
 Requisiti non funzionali -->  descrivono vincoli sui servizi offerti dal
 sistema, e sullo stesso processo di sviluppo
@@ -179,13 +202,57 @@ Come amministratore, voglio poter registrare la restituzione dei libri, così da
 Come sistema, voglio calcolare automaticamente eventuali multe per danni, perdite o mancate restituzioni, così da applicare i costi previsti in modo corretto e trasparente.
 29. Gestione delle preferenze
 Come utente loggato, voglio poter gestire le mie preferenze di generi e autori, così da migliorare la selezione dei libri che ricevo.
+30. Pagamento delle multe
+Come utente abbonato, voglio poter pagare le multe a mio carico, così da regolarizzare la mia posizione e continuare a usare il servizio.
+31. Pagamento della cauzione
+Come utente abbonato, voglio poter pagare una cauzione a ogni ordine, così da poter ricevere i libri.
+32. Restituzione della cauzione
+Come utente abbonato, voglio che la cauzione mi venga restituita dopo il rientro dei libri e i controlli sul loro stato, così da recuperare la somma versata, al netto di eventuali multe.
+33. Notifica della multa
+Come utente, voglio ricevere una notifica con motivazione e importo di ogni multa applicata, così da capire perché mi viene addebitata.
+34. Sospensione per pagamento fallito
+Come sistema, voglio sospendere il servizio quando il pagamento dell'abbonamento non va a buon fine, così da riattivarlo solo al pagamento successivo.
+35. Avviso di sospensione
+Come utente abbonato, voglio essere avvisato se il pagamento fallisce e il servizio viene sospeso, così da poter regolarizzare il pagamento.
 
 
 SWOT analisys: 
-- S : Nessuno sul mercato propone un servizio identico, conveniente, innovativo. contiene più funzionalità in un'applicazione 
-- W : non è molto sviluppata e non prevede molti svaghi al suo interno
-- O : potrei inserire l'ai all'interno, proporre dei giochetti, fare scegliere i libri all'utente se preferisce 
-- T : Le biblioteche offrono il prestito di libri gratis, le persone potrebbero non restituirli o danneggiati
+
+**Punti di forza (S)**
+- La formula "sorpresa, leggi, restituisci o tieni" risolve l'indecisione e si spiega in una frase.
+- Il modello combina scoperta, prestito e acquisto in un'unica app, con un catalogo consultabile anche senza account.
+- Il profilo (generi, autori, letti, recensioni) permette una selezione personalizzata.
+- Chi legge poco spende meno che comprando ogni libro, e può comunque tenere quelli che ama.
+
+**Punti di debolezza (W)**
+- Servizio fisico con costi alti: spedizione di andata e ritorno, magazzino, usura delle copie.
+- Dipende da un catalogo ampio. All'inizio, con poche copie, la sorpresa rischia di ripetersi o di non corrispondere ai gusti.
+- L'algoritmo di selezione ha bisogno di dati (recensioni, libri letti) che un nuovo utente non ha ancora.
+- App poco sviluppata, con pochi elementi di coinvolgimento oltre al servizio principale.
+- Complessità operativa: gestione di copie, multe, cauzioni, sospensioni.
+
+**Opportunità (O)**
+- AI per la selezione e per i suggerimenti, che può diventare il vero elemento distintivo.
+- Gamification (sfide di lettura, classifica dei lettori) per fidelizzare.
+- Modalità "scelgo io" per chi vuole decidere i libri.
+- Collaborazioni con autori, case editrici e librerie convenzionate.
+- Regalo di compleanno e fedeltà come leva di retention.
+- Abbonamenti regalo, che permettono di raggiungere un pubblico nuovo.
+- Libri digitali come estensione futura.
+
+**Minacce (T)**
+- Biblioteche e prestito digitale (come MLOL in Italia): gratuiti, anche se meno personalizzati e con attese.
+- Servizi di abbonamento a libri a sorpresa o a book box, e librerie online con usato e sconti.
+- Utenti che non restituiscono o danneggiano i libri. Cauzione e multe attenuano il rischio, ma non lo eliminano.
+- Aumento dei costi di spedizione.
+- Normative su dati personali, pagamenti e diritti del consumatore, da rispettare fin dall'inizio.
+- Abbandono dell'abbonamento dopo pochi mesi, se le sorprese deludono.
+
+**Strategie incrociate**
+- *Forza + opportunità:* usare l'AI sul profilo di lettura per rendere le sorprese davvero azzeccate, e dare agli utenti una ragione per lasciare recensioni.
+- *Debolezza + opportunità:* le collaborazioni con case editrici o autori possono ridurre i costi di approvvigionamento e ampliare il catalogo.
+- *Forza + minaccia:* contro le biblioteche, puntare su ciò che non offrono: personalizzazione, consegna a casa, nessuna attesa.
+- *Debolezza + minaccia:* cauzione, multe e controlli sullo stato delle copie proteggono dai costi di perdite e danni. Conviene calcolare quanto deve valere la cauzione perché il modello regga.
 
 
 
@@ -200,7 +267,3 @@ UML CASES:
 - Abbonamento, spedizione e multe
 
 ![abbonamento spedizione multe](https://yuml.me/diagram/scruffy/usecase/%5BUtente%5D-%28Scegliere%20piano%29,%5BUtente%5D-%28Modificare%20piano%29,%5BUtente%5D%5E%5BUtente%20abbonato%5D,%5BUtente%20abbonato%5D-%28Ricevere%20libri%20a%20sorpresa%29,%5BUtente%20abbonato%5D-%28Restituire%20libri%29,%5BUtente%20abbonato%5D-%28Acquistare%20libro%20ricevuto%29,%5BUtente%20abbonato%5D-%28Visualizzare%20multe%29,%5BUtente%20abbonato%5D-%28Pagare%20multa%29,%5BAdmin%5D-%28Gestire%20invio%20mensile%29,%5BAdmin%5D-%28Calcolare%20data%20di%20scadenza%29,%5BAdmin%5D-%28Registrare%20restituzione%29,%5BAdmin%5D-%28Segnalare%20libro%20danneggiato%29,%5BAdmin%5D-%28Segnalare%20libro%20perso%29,%5BSistema%5D-%28Rilevare%20ritardo%20restituzione%29,%5BSistema%5D-%28Calcolare%20multa%29,%28Scegliere%20piano%29%3E%28Visualizzare%20piani%20disponibili%29,%28Modificare%20piano%29%3E%28Visualizzare%20piano%20attivo%29,%28Ricevere%20libri%20a%20sorpresa%29%3E%28Gestire%20invio%20mensile%29,%28Gestire%20invio%20mensile%29%3E%28Calcolare%20data%20di%20scadenza%29,%28Restituire%20libri%29%3E%28Registrare%20restituzione%29,%28Restituire%20libri%29%3C%28Acquistare%20libro%20ricevuto%29,%28Registrare%20restituzione%29%3C%28Segnalare%20libro%20danneggiato%29,%28Segnalare%20libro%20danneggiato%29%3E%28Calcolare%20multa%29,%28Segnalare%20libro%20perso%29%3E%28Calcolare%20multa%29,%28Rilevare%20ritardo%20restituzione%29%3E%28Calcolare%20multa%29.png)
-
-
-
-
